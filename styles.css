@@ -139,19 +139,22 @@ body {
   white-space: nowrap;
 }
 
-/* ---------- Track scaling ---------- */
+/* ---------- Track layout ---------- */
 .track {
   position: relative;
   width: 100%;
-  overflow: hidden;
 }
 
 .track-inner {
-  display: inline-flex;
+  display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 0;
   padding: 18px 6px 14px;
-  will-change: transform;
+}
+
+.track-inner + .track-inner {
+  margin-top: 40px;
 }
 
 /* ---------- Nodes ---------- */
@@ -166,11 +169,11 @@ body {
   background: var(--green);
   color: #fff;
   border-radius: 15px;
-  padding: 18px 20px;
-  width: 256px;
-  min-width: 256px;
-  max-width: 256px;
-  height: 168px;
+  padding: 20px 22px;
+  width: 296px;
+  min-width: 296px;
+  max-width: 296px;
+  height: 196px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -179,7 +182,7 @@ body {
 
 .node.event .name {
   font-weight: 700;
-  font-size: 27px;
+  font-size: 32px;
   line-height: 1.08;
   letter-spacing: -0.01em;
   text-wrap: balance;
@@ -199,11 +202,11 @@ body {
 .node.event.submission::after {
   content: "\2197";
   position: absolute;
-  top: 10px;
-  right: 12px;
+  top: 12px;
+  right: 14px;
   font-family: "JetBrains Mono", monospace;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 21px;
   line-height: 1;
   color: #fff;
   opacity: .85;
@@ -231,12 +234,12 @@ body {
   align-self: flex-start;
   font-family: "JetBrains Mono", monospace;
   font-weight: 700;
-  font-size: 19px;
+  font-size: 22px;
   background: #fff;
   color: var(--ink);
   border: 2px solid var(--ink);
   border-radius: 7px;
-  padding: 3px 10px;
+  padding: 3px 11px;
   line-height: 1.4;
   white-space: nowrap;
 }
@@ -246,16 +249,16 @@ body {
   background: var(--orange);
   color: #fff;
   border-radius: 999px;
-  padding: 17px 26px 17px 20px;
+  padding: 20px 30px 20px 23px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 15px;
+  gap: 17px;
 }
 
 .node.milestone .marker {
-  width: 20px;
-  height: 20px;
+  width: 23px;
+  height: 23px;
   background: #fff;
   border: 2.5px solid var(--ink);
   transform: rotate(45deg);
@@ -265,7 +268,7 @@ body {
 
 .node.milestone .name {
   font-weight: 700;
-  font-size: 27px;
+  font-size: 32px;
   letter-spacing: -0.01em;
   white-space: nowrap;
 }
@@ -279,12 +282,12 @@ body {
   background: var(--green-deep);
   color: #fff;
   border-radius: 15px;
-  padding: 19px 23px 20px;
-  min-width: 282px;
-  min-height: 136px;
+  padding: 22px 27px 24px;
+  min-width: 326px;
+  min-height: 158px;
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: 13px;
   justify-content: center;
   position: relative;
   overflow: hidden;
@@ -310,20 +313,20 @@ body {
 .node.duration .span-badge {
   font-family: "JetBrains Mono", monospace;
   font-weight: 700;
-  font-size: 17px;
+  font-size: 19px;
   letter-spacing: 0.03em;
   background: #fff;
   color: var(--green-deep);
   border: 2px solid var(--ink);
   border-radius: 7px;
-  padding: 3px 10px;
+  padding: 3px 11px;
   line-height: 1.4;
 }
 
 .node.duration .range {
   font-family: "JetBrains Mono", monospace;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 21px;
   color: #fff;
   white-space: nowrap;
   letter-spacing: 0.02em;
@@ -331,7 +334,7 @@ body {
 
 .node.duration .name {
   font-weight: 700;
-  font-size: 27px;
+  font-size: 32px;
   line-height: 1.08;
   letter-spacing: -0.01em;
   position: relative;
@@ -344,7 +347,7 @@ body {
   align-items: center;
   gap: 4px;
   color: #fff;
-  font-size: 17px;
+  font-size: 19px;
 }
 
 .node.duration .span-bar i {
@@ -408,12 +411,12 @@ body {
   transform: translate(-50%, -150%);
   font-family: "JetBrains Mono", monospace;
   font-weight: 700;
-  font-size: 14.5px;
+  font-size: 17px;
   background: var(--card);
   color: var(--ink);
   border: 2px solid var(--ink);
   border-radius: 8px;
-  padding: 2px 8px;
+  padding: 3px 9px;
   white-space: nowrap;
   line-height: 1.35;
 }
@@ -460,11 +463,6 @@ body {
   height: 26px;
   border: 2.5px solid var(--ink);
   flex: 0 0 auto;
-}
-
-.legend .sw.milestone {
-  background: var(--orange);
-  border-radius: 999px;
 }
 
 .legend .sw.event {

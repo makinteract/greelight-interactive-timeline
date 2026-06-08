@@ -1,17 +1,12 @@
 function fit(){
-  var tracks=[].slice.call(document.querySelectorAll('.track'));
-  var s=1;
-  tracks.forEach(function(t){
-    var inner=t.querySelector('.track-inner');
-    inner.style.transform='none';
-    s=Math.min(s, t.clientWidth/inner.scrollWidth);
+  var inners = [].slice.call(document.querySelectorAll('.track-inner'));
+  inners.forEach(function(inner){ inner.style.zoom = 1; });
+  var s = 1;
+  inners.forEach(function(inner){
+    var track = inner.closest('.track');
+    s = Math.min(s, track.clientWidth / inner.scrollWidth);
   });
-  tracks.forEach(function(t){
-    var inner=t.querySelector('.track-inner');
-    inner.style.transformOrigin='left top';
-    inner.style.transform='scale('+s+')';
-    t.style.height=(inner.offsetHeight*s)+'px';
-  });
+  inners.forEach(function(inner){ inner.style.zoom = s; });
 }
 
 /* ---------- Rendering from data.json ---------- */
@@ -67,24 +62,29 @@ function buildArrow(prevWeek, week){
   return arrow;
 }
 
-function buildSection(section, index, now){
+function buildRow(events, section, now){
+  var inner = el('div', 'track-inner');
+  events.forEach(function(ev, j){
+    if(j > 0) inner.appendChild(buildArrow(events[j-1].week, ev.week));
+    var isPast = section.startDate ? eventDate(section, ev) < now : false;
+    inner.appendChild(buildNode(ev, isPast));
+  });
+  return inner;
+}
+
+function buildSection(section, perLine, now){
   var sectionEl = el('section', 'section');
 
   var head = el('div', 'section-head');
-  head.appendChild(el('span', 'sec-num', String(index+1).padStart(2,'0')));
   head.appendChild(el('h2', null, section.title));
   head.appendChild(el('span', 'sec-rule'));
   head.appendChild(el('span', 'sec-weeks', 'W01 – ' + weekLabel(section.weeks)));
   sectionEl.appendChild(head);
 
-  var inner = el('div', 'track-inner');
-  section.events.forEach(function(ev, i){
-    if(i > 0) inner.appendChild(buildArrow(section.events[i-1].week, ev.week));
-    var isPast = section.startDate ? eventDate(section, ev) < now : false;
-    inner.appendChild(buildNode(ev, isPast));
-  });
   var track = el('div', 'track');
-  track.appendChild(inner);
+  for(var i = 0; i < section.events.length; i += perLine){
+    track.appendChild(buildRow(section.events.slice(i, i + perLine), section, now));
+  }
   sectionEl.appendChild(track);
 
   return sectionEl;
@@ -92,10 +92,11 @@ function buildSection(section, index, now){
 
 function renderSections(data){
   var now = resolveNow(data.debug);
+  var perLine = data.boxesPerLine || Infinity;
   var wrap = document.querySelector('.wrap');
   var legend = wrap.querySelector('.legend');
-  data.sections.forEach(function(section, i){
-    wrap.insertBefore(buildSection(section, i, now), legend);
+  data.sections.forEach(function(section){
+    wrap.insertBefore(buildSection(section, perLine, now), legend);
   });
 }
 
