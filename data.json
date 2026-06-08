@@ -1,0 +1,92 @@
+{
+  "debug": {
+    "enabled": true,
+    "fakeDate": "2024-03-15"
+  },
+  "sections": [
+    {
+      "title": "Third semester",
+      "startDate": "2025-09-01",
+      "weeks": 16,
+      "events": [
+        {
+          "type": "milestone",
+          "content": "Third semester starts",
+          "week": 1,
+          "notes": "Classes begin target='_blank'>here</a> — register for thesis credits this week."
+        },
+        {
+          "type": "presentation",
+          "content": "Topic presentation",
+          "week": 13,
+          "notes": "15-minute talk to the department on the proposed thesis topic."
+        },
+        {
+          "type": "plain",
+          "content": "Committee selection",
+          "week": 13,
+          "notes": "Propose three committee members to the program office using <a href='https://green.designware.xyz' target='_blank'>this form</a>."
+        },
+        {
+          "type": "plain",
+          "content": "Committee assignment",
+          "week": 14,
+          "notes": "Official committee assignment confirmed by the department."
+        }
+      ]
+    },
+    {
+      "title": "Fourth semester",
+      "startDate": "2026-03-02",
+      "weeks": 18,
+      "events": [
+        {
+          "type": "milestone",
+          "content": "Fourth semester starts",
+          "week": 1,
+          "notes": "Final semester — confirm the thesis schedule with your advisor."
+        },
+        {
+          "type": "submission",
+          "content": "Abstract + Progress check submission",
+          "week": 2,
+          "url": "https://green.designware.xyz",
+          "notes": "Upload a one-page abstract plus a short progress summary."
+        },
+        {
+          "type": "submission",
+          "content": "Thesis draft submission",
+          "week": 12,
+          "url": "https://green.designware.xyz",
+          "notes": "Full draft due to the committee for review — leave time for formatting."
+        },
+        {
+          "type": "plain",
+          "content": "Reviews released",
+          "week": 13,
+          "notes": "Committee feedback becomes available; plan revisions around it."
+        },
+        {
+          "type": "submission",
+          "content": "Submit thesis revision",
+          "week": 15,
+          "url": "https://green.designware.xyz",
+          "notes": "Address committee comments and resubmit the revised draft."
+        },
+        {
+          "type": "presentation",
+          "content": "Defense Presentation",
+          "week": 16,
+          "notes": "Public defense — prepare slides and rehearse with the committee beforehand."
+        },
+        {
+          "type": "submission",
+          "content": "Final thesis submission",
+          "week": 18,
+          "url": "https://green.designware.xyz",
+          "notes": "Upload the final, approved version to close out the thesis."
+        }
+      ]
+    }
+  ]
+}
