@@ -109,7 +109,7 @@ function setupInteractivity(){
   var selected = null;
 
   function catInfo(node){
-    if(node.classList.contains('milestone'))    return {key:'milestone',    label:'Milestone',    color:'#FF5A2C'};
+    if(node.classList.contains('milestone'))    return {key:'milestone',    label:'Start of semester',    color:'#FF5A2C'};
     if(node.classList.contains('presentation'))  return {key:'presentation', label:'Presentation', color:'#DCE8FF'};
     if(node.classList.contains('submission'))    return {key:'submission',   label:'Submission',   color:'#14B457'};
     return {key:'plain', label:'Other', color:'#ffffff'};

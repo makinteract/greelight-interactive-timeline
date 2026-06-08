@@ -13,19 +13,19 @@
           "type": "milestone",
           "content": "Third semester starts",
           "week": 1,
-          "notes": "Classes begin target='_blank'>here</a> — register for thesis credits this week."
+          "notes": "Classes begin."
         },
         {
           "type": "presentation",
           "content": "Topic presentation",
           "week": 13,
-          "notes": "15-minute talk to the department on the proposed thesis topic."
+          "notes": "10-minute talk + 5-minute Q&A to the department on the proposed thesis topic."
         },
         {
           "type": "plain",
           "content": "Committee selection",
           "week": 13,
-          "notes": "Propose three committee members to the program office using <a href='https://green.designware.xyz' target='_blank'>this form</a>."
+          "notes": "Propose three committee members to the program office using the Google Form sent by the department office."
         },
         {
           "type": "plain",
@@ -50,15 +50,13 @@
           "type": "submission",
           "content": "Abstract + Progress check submission",
           "week": 2,
-          "url": "https://green.designware.xyz",
-          "notes": "Upload a one-page abstract plus a short progress summary."
+          "notes": "<a href='https://green.designware.xyz' target='_blank'>Upload the thesis abstract plus a short progress summary</a> signed by the committee members."
         },
         {
           "type": "submission",
           "content": "Thesis draft submission",
           "week": 12,
-          "url": "https://green.designware.xyz",
-          "notes": "Full draft due to the committee for review — leave time for formatting."
+          "notes": "Address committee comments and <a href='https://green.designware.xyz' target='_blank'>resubmit</a> the revised draft with highlighted changes."
         },
         {
           "type": "plain",
@@ -70,21 +68,19 @@
           "type": "submission",
           "content": "Submit thesis revision",
           "week": 15,
-          "url": "https://green.designware.xyz",
-          "notes": "Address committee comments and resubmit the revised draft."
+          "notes": "Address committee comments and <a href='https://green.designware.xyz' target='_blank'>resubmit the revised draft with highlighted changes.</a>"
         },
         {
           "type": "presentation",
           "content": "Defense Presentation",
           "week": 16,
-          "notes": "Public defense — prepare slides and rehearse with the committee beforehand."
+          "notes": "Public defense — prepare slides for a 15-minute presentation."
         },
         {
           "type": "submission",
           "content": "Final thesis submission",
           "week": 18,
-          "url": "https://green.designware.xyz",
-          "notes": "Upload the final, approved version to close out the thesis."
+          "notes": "Submit the final printed and signed thesis to the department office"
         }
       ]
     }
