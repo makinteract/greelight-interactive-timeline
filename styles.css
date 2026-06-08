@@ -25,7 +25,7 @@ body {
   color: var(--ink);
   font-family: "Space Grotesk", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
-  padding: 56px clamp(28px, 5vw, 80px) 64px;
+  padding: 8px clamp(14px, 2.5vw, 40px) 0;
 }
 
 .wrap {
